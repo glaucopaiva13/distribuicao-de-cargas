@@ -1,0 +1,42 @@
+package Modelo;
+
+public class Carga {
+	private int id;
+	private int tipo;
+	private int urgencia;
+	private int peso;
+	private String descricao;
+	private int prioridade;
+
+	Carga(int id, int tipo, int urgencia, int peso, String descricao, int prioridade){
+		this.id = id;
+		this.tipo = tipo;
+		this.urgencia = urgencia;
+		this.peso = peso;
+		this.descricao = descricao;
+		this.prioridade = calcularPrioridade();
+	}
+
+	private int calcularPrioridade(){
+		return (urgencia *10) + (peso * 2) + (tipo * 5);
+	}
+
+	public int getId(){
+		return id;
+	}
+	public int getTipo(){
+		return tipo;
+	}
+	public int getUrgencia(){
+		return urgencia;
+	}
+	public int getPeso(){
+		return peso;
+	}
+	public String getDescricao(){
+		return descricao;
+	}
+	public int getPrioridade(){
+		return prioridade;
+	}
+}
