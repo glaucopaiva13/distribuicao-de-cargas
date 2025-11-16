@@ -44,7 +44,7 @@ public class GerenciadorCargas {
 		System.out.println("---------------------------------------------------------");
 
 		for (int i = 1; i <= heap.tamanho(); i++) {
-			System.out.println(heap.getElemento(i).toString()); // depende se você fez o getter do array
+			System.out.println(heap.getElemento(i).toString()); 
 		}
 	}
 
