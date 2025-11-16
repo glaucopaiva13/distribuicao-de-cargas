@@ -1,4 +1,4 @@
-package  Modelo;
+package Modelo;
 
 public class HeapMaxima {
 	private Carga[] heap;
@@ -12,7 +12,6 @@ public class HeapMaxima {
 		this.quantidade = 0;
 	}
 
-	// Comparação de cargas
 	private boolean maior(Carga a, Carga b){
 		if (a.getPrioridade() != b.getPrioridade()){
 			return a.getPrioridade() > b.getPrioridade();
@@ -49,6 +48,13 @@ public class HeapMaxima {
 	public Carga consultarTopo() {
 		if (quantidade == 0) return null;
 		return heap[1];
+	}
+
+	public Carga getElemento(int i) {
+		if (i < 1 || i > quantidade){ 
+			return null;
+		}
+		return heap[i];
 	}
 
 	public int tamanho() {

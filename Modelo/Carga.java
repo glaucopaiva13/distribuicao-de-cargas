@@ -8,7 +8,8 @@ public class Carga {
 	private String descricao;
 	private int prioridade;
 
-	Carga(int id, int tipo, int urgencia, int peso, String descricao, int prioridade){
+
+	public Carga(int id, int tipo, int urgencia, int peso, String descricao){
 		this.id = id;
 		this.tipo = tipo;
 		this.urgencia = urgencia;
@@ -17,8 +18,9 @@ public class Carga {
 		this.prioridade = calcularPrioridade();
 	}
 
+
 	private int calcularPrioridade(){
-		return (urgencia *10) + (peso * 2) + (tipo * 5);
+		return (urgencia * 10) + (peso * 2) + (tipo * 5);
 	}
 
 	public int getId(){
@@ -38,5 +40,12 @@ public class Carga {
 	}
 	public int getPrioridade(){
 		return prioridade;
+	}
+	@Override
+	public String toString() {
+		return String.format(
+			"%-4d | %-4d | %-8d | %-4d | %-10d | %s",
+			id, tipo, urgencia, peso, prioridade, descricao
+		);
 	}
 }
